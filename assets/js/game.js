@@ -75,24 +75,25 @@ var fight = function(enemyName) {
     }
 };
 // fight();
+for (var i = 0; i < enemyNames.length; i++){
+    if (playerHealth > 0){
+        // let player kmow what round they're in, remember that arrays start at 0 so it needs to have 1 added to it
+        window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
 
-for(var i = 0; i < enemyNames.length; i++) {
-    var pickedEnemyName = enemyNames[i];
-    //debugger;
-    enemyHealth = 50;
-    //call fight function with enemy-robot
-    fight(pickedEnemyName);
-    
-    //console.log(enemyNames[i]);
-    //console.log(i);
-    //console.log(enemyNames[i] + " is at " + i + " index");
+        // pick new enemy to fight based on the index of the enemyNames array
+        var pickedEnemyName = enemyNames[i];
+        //reset enemyHealth before starting a new fight
+        enemyHealth = 50;
+
+        // use debugger to pause script from running and check what's going on at that moment in the code
+        // debugger;
+
+        //call fight function with enemy-robot
+        // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
+        fight(pickedEnemyName);
+    }    
+    else {
+        window.alert("You have lost your robot in battle! Game Over!");
+        break;
+    }
 }
-
-// You can also log multiple values at once like this 
-//console.log(playerName, playerAttack, playerHealth);
- 
-//console.log(enemyNames);
-//console.log(enemyNames[0]);
-//console.log(enemyNames[1]);
-//console.log(enemyNames[2]);
-//console.log(enemyNames.length);
